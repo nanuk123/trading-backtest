@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Strategy Backtester</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Trading Strategy Backtester</h1>
+    <div id="chart-container" style="width: 100%; height: 600px;"></div>
+    <button id="random-date">Pick Random Date/Time</button>
+    <div id="trade-simulator">
+        <h2>Trade Simulator</h2>
+        <p>Account Balance: $<span id="balance">10000</span></p>
+        <button id="buy">Buy</button>
+        <button id="sell">Sell</button>
+        <p>Position: <span id="position">None</span></p>
+    </div>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+        new TradingView.widget({
+            "container_id": "chart-container",
+            "symbol": "CME_MINI:NQ1!",
+            "interval": "1",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "hide_side_toolbar": false,
+            "allow_symbol_change": true,
+            "details": true,
+            "studies": [
+                "MA@tv-basicstudies"
+            ],
+            "show_popup_button": true,
+            "popup_width": "1000",
+            "popup_height": "650"
+        });
+    </script>
+</body>
+</html>
